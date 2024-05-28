@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
 # -/-
 
-def main():
+def main(): # ! A SE ARRUMAR.!!!!
     n = int(input("Clicks no interruptor: "))
     a = 0
     b = 0
