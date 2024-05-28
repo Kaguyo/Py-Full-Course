@@ -3,13 +3,9 @@ def main():
     a = 0
     b = 0
 
-    lista = []
-
-    for _ in range(n):
-        interruptor = input("Aperte interruptor 1 ou 2")
-        lista.append(interruptor)
-
-    for posicoes in lista:
+    interruptor = input("Aperte interruptor 1 ou 2: ").split(" ")
+    
+    for posicoes in interruptor:
         if posicoes == 1:
             a += 1
         else: a += 1; b += 1
