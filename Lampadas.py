@@ -6,8 +6,8 @@ def main():
     lista = []
 
     for _ in range(n):
-        elemento = input("Digite um elemento: ")
-        lista.append(elemento)
+        interruptor = input("Aperte interruptor 1 ou 2")
+        lista.append(interruptor)
 
     for posicoes in lista:
         if posicoes == 1:
