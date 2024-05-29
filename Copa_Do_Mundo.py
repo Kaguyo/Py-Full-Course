@@ -1,5 +1,7 @@
 def main():
     
+    TIMES = 2
+
     Resultado_1 = input(str("Defina o placar: ")).split()
     print("Placar jogo 1: ",Resultado_1)
 
@@ -16,8 +18,8 @@ def main():
     print("Placar jogo 5: ",Resultado_5)
 
     Resultado_6 = input(str("Defina o placar: ")).split()
-    print("Placar jogo 6: ",Resultado_6) #result
-
+    print("Placar jogo 6: ",Resultado_6)
+    
     Resultado_7 = input(str("Defina o placar: ")).split()
     print("Placar jogo 7: ",Resultado_7)
 
@@ -45,6 +47,5 @@ def main():
     Resultado_15 = input(str("Defina o placar: ")).split()
     print("Placar jogo 15: ",Resultado_15)
 
-    
 if __name__ == "__main__":
     main()
