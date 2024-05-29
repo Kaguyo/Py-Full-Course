@@ -16,7 +16,7 @@ def main():
     print("Placar jogo 5: ",Resultado_5)
 
     Resultado_6 = input(str("Defina o placar: ")).split()
-    print("Placar jogo 6: ",Resultado_6) #
+    print("Placar jogo 6: ",Resultado_6) #result
 
     Resultado_7 = input(str("Defina o placar: ")).split()
     print("Placar jogo 7: ",Resultado_7)
