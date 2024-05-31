@@ -1,3 +1,4 @@
+# 1a Versão
 def main():
     try: # tente executar o que há dentro do bloco de código, se der erro.:except
         n = int(input("Clicks no interruptor: "))
@@ -38,6 +39,7 @@ if __name__ == "__main__":
 
 # -/-
 
+# 2a Versão
 def main(): # ! A SE ARRUMAR.!!!!
     n = int(input("Clicks no interruptor: "))
     a = 0
@@ -61,6 +63,7 @@ if __name__ == "__main__":
 
 # -/-
 
+# 3a Versão
 def main():
     n = int(input("Clicks no interruptor: "))
     a = 0
