@@ -49,8 +49,8 @@ print("\n""Dragon Ball Z & Naruto:""\n")
 Dbz = {"goku","vegeta","gohan","fans"}
 Naruto = {"naruto","sasuke","itachi","fans"}
 
-print("Difference: ",Dbz.difference(Naruto))
-print("Intersection: ",Dbz.intersection(Naruto))
+print("Difference:",Dbz.difference(Naruto))
+print("Intersection:",Dbz.intersection(Naruto))
 
 # Dictionary
 # Obs, datatype não importa.
