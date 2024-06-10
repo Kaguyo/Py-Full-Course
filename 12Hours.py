@@ -55,8 +55,9 @@ print("Intersection: ",Dbz.intersection(Naruto))
 # Dictionary
 # Obs, datatype não importa.
 print("\n""Dictionary:""\n")
-Ayaka = 2
-Cryo = 4
+Ayaka = 1
+Cryo = 2
+
 Elementos = {Ayaka:Cryo,
              "Baizhu":"Dendro",
              "Keqing":"Electro",}
@@ -67,14 +68,20 @@ Elementos.update({"Jean":"Mondstadt"})
 # Elementos.pop(Ayaka) remove ayaka
 # Elementos.clear()
 
-print("Key ayaka: ",Elementos[Ayaka])
-print("Key baizhu: ",Elementos["Baizhu"])
-print("Get: ",Elementos.get("Hutao"))
-print("Keys: ",Elementos.keys())
-print("Values: ",Elementos.values())
-print("Items: ",Elementos.items())
+print("Key ayaka:",Elementos[Ayaka])
+print("Key baizhu:",Elementos["Baizhu"])
+print("Get:",Elementos.get("Hutao"))
+print("Keys:",Elementos.keys())
+print("Values:",Elementos.values())
+print("Items:",Elementos.items())
 
 
 # Loop for para formatalizar e exibir primeiro elemento e segundo elemento de cada linha
 for key,value in Elementos.items():
-    print("for: ",key, value)
+    print("for:",key, value)
+
+nome ="goku"
+if(nome[0].islower()):
+    print("\n""Index:",nome[0::3].upper()) # Duplo ponto duplo("::") significa slicing.
+                                           # Enquanto apenas duplo ponto(":") significa range.
+print("Nome contrario:",nome[-1::-1])      # O index negativo, inverte a posição de index.
