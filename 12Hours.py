@@ -86,43 +86,38 @@ if(nome[0].islower()):
                                            # Enquanto apenas duplo ponto(":") significa range.
 print("Nome contrario:",nome[-1::-1],"\n")      # O index negativo, inverte a posição de index.
 
+
+# Functions -
+print("Functions:""\n")
+
 def dano_causado():
 
-    print("Quanto de ATK você tem?")
-    Atk = int(input())
-    print("ATK:", Atk)
+    Atk = int(input("Quanto de Atk vc tem?: "))
+    print("ATK:", Atk,"\n")
 
-    print("Quanto de Multiplicador de Skill você tem?")
-    Multiplier = float(input())
-    print("Multiplicador de Skill:",str(Multiplier)+"%")
+    Multiplier = float(input("Quanto de Multiplicador de Skill você tem?: "))
+    print("Multiplicador de Skill:",str(Multiplier)+" %")
 
-    print("Quanto de Dano Crítico você tem?")
-    CritDMG = float(input())
-    print("Dano Crítico:",str(CritDMG)+"%")
+    CritDMG = float(input("Quanto de Dano Crítico você tem?: "))
+    print("Dano Crítico:",str(CritDMG)+" %")
 
-    print("Quanto de Bonus de Dano você tem?")
-    BonusDMG = float(input())
-    print("Bonus de Dano:",str(BonusDMG)+"%")
+    BonusDMG = float(input("Quanto de Bonus de Dano você tem?: "))
+    print("Bonus de Dano:",str(BonusDMG)+" %")
 
-    print("Quanto de Bonus de Dano de Skill você tem?")
-    MultiplierBonus = float(input())
-    print("Bonus de Multiplicador de Skill:",str(MultiplierBonus)+"%")
+    MultiplierBonus = float(input("Quanto de Bonus de Dano de Skill você tem?: "))
+    print("Bonus de Multiplicador de Skill:",str(MultiplierBonus)+" %")
 
-    print("Quanto de Defesa seu inimigo tem?")
-    Def_enemy = int(input())
+    Def_enemy = int(input("Quanto de Defesa seu inimigo tem?: "))
     print("Defesa inimigo:", Def_enemy)
 
-    print("Quanto de Resistencia do Inimigo?")
-    Resistance = float(input())
-    print("Resistencia do Inimigo:",str(Resistance)+"%")
+    Resistance = float(input("Quanto de Resistencia do Inimigo?: "))
+    print("Resistencia do Inimigo:",str(Resistance)+" %")
 
-    print("Qual o Level do Inimigo?")
-    Lvl_enemy = int(input())
+    DebuffRes = float(input("Quanto de Debuff na Resistência do Inimigo?: "))
+    print("Quantidade de Debuff na Resistência do Inimigo:",str(DebuffRes)+" %")
+
+    Lvl_enemy = int(input("Qual o Level do Inimigo?: "))
     print("Level do Inimigo:",Lvl_enemy)
-
-    print("Quanto de Debuff na Resistência do Inimigo?")
-    DebuffRes = float(input())
-    print("Quantidade de Debuff na Resistência do Inimigo:",str(DebuffRes)+"%")
 
     Verdadeira_EnemyDef = Def_enemy * (Lvl_enemy / 100 + 1)
     resist_effect = (Resistance - DebuffRes) / 100
