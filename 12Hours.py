@@ -84,4 +84,56 @@ nome ="goku"
 if(nome[0].islower()):
     print("\n""Index:",nome[0::3].upper()) # Duplo ponto duplo("::") significa slicing.
                                            # Enquanto apenas duplo ponto(":") significa range.
-print("Nome contrario:",nome[-1::-1])      # O index negativo, inverte a posição de index.
+print("Nome contrario:",nome[-1::-1],"\n")      # O index negativo, inverte a posição de index.
+
+def dano_causado():
+
+    print("Quanto de ATK você tem?")
+    Atk = int(input())
+    print("ATK:", Atk)
+
+    print("Quanto de Multiplicador de Skill você tem?")
+    Multiplier = float(input())
+    print("Multiplicador de Skill:",str(Multiplier)+"%")
+
+    print("Quanto de Dano Crítico você tem?")
+    CritDMG = float(input())
+    print("Dano Crítico:",str(CritDMG)+"%")
+
+    print("Quanto de Bonus de Dano você tem?")
+    BonusDMG = float(input())
+    print("Bonus de Dano:",str(BonusDMG)+"%")
+
+    print("Quanto de Bonus de Dano de Skill você tem?")
+    MultiplierBonus = float(input())
+    print("Bonus de Multiplicador de Skill:",str(MultiplierBonus)+"%")
+
+    print("Quanto de Defesa seu inimigo tem?")
+    Def_enemy = int(input())
+    print("Defesa inimigo:", Def_enemy)
+
+    print("Quanto de Resistencia do Inimigo?")
+    Resistance = float(input())
+    print("Resistencia do Inimigo:",str(Resistance)+"%")
+
+    print("Qual o Level do Inimigo?")
+    Lvl_enemy = int(input())
+    print("Level do Inimigo:",Lvl_enemy)
+
+    print("Quanto de Debuff na Resistência do Inimigo?")
+    DebuffRes = float(input())
+    print("Quantidade de Debuff na Resistência do Inimigo:",str(DebuffRes)+"%")
+
+    Verdadeira_EnemyDef = Def_enemy * (Lvl_enemy / 100 + 1)
+    resist_effect = (Resistance - DebuffRes) / 100
+    Dano = (Atk-Verdadeira_EnemyDef)*(Multiplier/100)*(CritDMG/100+1)*(BonusDMG/100+1)*(MultiplierBonus/100+1)*(1-resist_effect)
+    if Dano > 0:
+        print("Dano Causado:",Dano)
+    elif Dano < 0:
+        Dano = 1
+        print("Dano Causado:",Dano)
+    else: print("Dano Causado:",Dano)
+
+Hit_taken = False
+if Hit_taken:dano_causado()
+else: pass
