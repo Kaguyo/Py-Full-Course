@@ -123,12 +123,12 @@ def dano_causado():
     resist_effect = (Resistance - DebuffRes) / 100
     Dano = (Atk-Verdadeira_EnemyDef)*(Multiplier/100)*(CritDMG/100+1)*(BonusDMG/100+1)*(MultiplierBonus/100+1)*(1-resist_effect)
     if Dano > 0:
-        print("Dano Causado:",Dano)
+        print("Dano Causado:",int(Dano))
     elif Dano < 0:
         Dano = 1
-        print("Dano Causado:",Dano)
-    else: print("Dano Causado:",Dano)
+        print("Dano Causado:",int(Dano))
+    else: print("Dano Causado:",int(Dano))
 
-Hit_taken = False
+Hit_taken = True
 if Hit_taken:dano_causado()
 else: pass
