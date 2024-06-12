@@ -129,6 +129,73 @@ def dano_causado():
         print("Dano Causado:",int(Dano))
     else: print("Dano Causado:",int(Dano))
 
-Hit_taken = True
+Hit_taken = False
 if Hit_taken:dano_causado()
 else: pass
+
+def probleman3i1():
+    n = int(input("Digite um valor inteiro: "))
+    i = 0
+    
+    if n == 1:
+        print(0)
+    else:
+        while n != 1:
+            if n % 2 == 0:
+                n = n / 2
+            else:
+                n = n * 3 + 1
+            i = i + 1
+        
+    print("A quantidade de vezes que a função foi chamada foi:",i)
+
+Probleman3i1 = False
+if Probleman3i1:probleman3i1()
+else: pass
+
+def hanoi(n):
+    torre1 = ""
+    torre2 = ""
+    torre3 = ""
+    for i in range(n, 0, -1):
+        torre1 += str(i)
+    print("To descobrindo seu código hein; torre 1 range INICIO menos ULTIMA:",torre1[:-1])
+    if n % 2 == 0:
+        direcao = [1, 2, 3]
+    else:
+        direcao = [1, 3, 2]
+    while len(torre3) < n: # Cheguei no meio do seu código, e percebi que o conceito é parar quando o pino 4 tiver todos discos.
+        print("!!!!!Contador de voltas!!!!!"+"\n")
+        if torre1 and (not torre2 or torre1[-1] < torre2[-1]):
+            torre2 += torre1[-1]
+            torre1 = torre1[:-1] # Atualiza o valor após transferência de disco.
+            if torre2 == False : print("A torre 2 é falsa? simkkkk")
+            else:print("A torre 2 é falsa? Vish nem é kkkk :desumano:")
+            print("IF Mova o disco %s da torre 1 para a torre 2." % torre2[-1])
+        else:
+            torre1 += torre2[-1]
+            torre2 = torre2[:-1] # Atualiza...
+            print("ELSE Mova o disco %s da torre 2 para a torre 1." % torre1[-1])
+        print("Valor das torres: torre1: "+torre1+" torre2: "+torre2+" torre3: "+torre3)
+        if torre1 and (not torre3 or torre1[-1] < torre3[-1]):
+            torre3 += torre1[-1]
+            torre1 = torre1[:-1] # Atualiza...
+            print("IF Valor da torre 3:",torre3[0:-1])
+            print("IF Mova o disco %s da torre 1 para a torre 3." % torre3[-1])
+        else:
+            torre1 += torre3[-1]
+            torre3 = torre3[:-1] # Atualiza...
+            print("ELSE Mova o disco %s da torre 3 para a torre 1." % torre1[-1],)
+        print("Valor das torres: torre1: "+torre1+" torre2: "+torre2+" torre3: "+torre3)
+        if torre2 and (not torre3 or torre2[-1] < torre3[-1]):
+            torre3 += torre2[-1]
+            torre2 = torre2[:-1]
+            print("IF Mova o disco %s da torre 2 para a torre 3." % torre3[-1])
+        else:
+            torre2 += torre3[-1]
+            torre3 = torre3[:-1]
+            print("ELSE Mova o disco %s da torre 3 para a torre 2." % torre2[-1])
+        print("Valor das torres: torre1: "+torre1+" torre2: "+torre2+" torre3: "+torre3)
+
+Hanoi = False
+if Hanoi == True:hanoi(4)
