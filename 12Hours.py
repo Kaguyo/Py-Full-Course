@@ -159,12 +159,7 @@ def hanoi(n):
     torre3 = ""
     for i in range(n, 0, -1):
         torre1 += str(i)
-    print("To descobrindo seu código hein; torre 1 range INICIO menos ULTIMA:",torre1[:-1])
-    if n % 2 == 0:
-        direcao = [1, 2, 3]
-    else:
-        direcao = [1, 3, 2]
-    while len(torre3) < n: # Cheguei no meio do seu código, e percebi que o conceito é parar quando o pino 4 tiver todos discos.
+    while len(torre3) < n:
         print("!!!!!Contador de voltas!!!!!"+"\n")
         if torre1 and (not torre2 or torre1[-1] < torre2[-1]):
             torre2 += torre1[-1]
