@@ -86,10 +86,38 @@ if(nome[0].islower()):
                                            # Enquanto apenas duplo ponto(":") significa range.
 print("Nome contrario:",nome[-1::-1],"\n")      # O index negativo, inverte a posição de index.
 
+# Tests :
 
-# Functions -
+print("Testes:","\n")
+number1 = True
+number2 = True
+number3 = 3
+number4 = 4
+if number1 and (not number2 or number3 < number4):
+    print("o not aplica apenas ao proximo parametro/variavel.")
+else: print("sim o not, aplica em todos dentro de uma tupla ou à direita.")
+
+print("\n")
+# Functions :
 print("Functions:""\n")
 
+# Testes tuplas e variaveis
+def calcular_desconto(total, cupom):
+    if cupom == "DESC10":
+        desconto = total * 0.1
+        return desconto
+    else:
+        return 0
+
+# Chamada da função e impressão do desconto
+desconto = False
+if desconto:
+    desconto_final = calcular_desconto(100, "DESC10")
+    print("Desconto aplicado:", desconto_final, "(Estudando uso de Return)")
+
+
+
+# Programa de dano causado :
 def dano_causado():
 
     Atk = int(input("Quanto de Atk vc tem?: "))
@@ -133,6 +161,21 @@ Hit_taken = False
 if Hit_taken:dano_causado()
 else: pass
 
+# "*"arguments = will pack the arguments into a tuple
+#                useful so that a function can accept a varying amount of arguments
+def add(*stuff):
+    sum = 0
+    for i in stuff:
+        sum += i
+    return sum
+
+Add = False
+if Add:
+    print(add(1,2,3,4,5,6),"(Argumento *)")
+
+
+
+# Quantas vezes while é utilizado até o N tornar-se 1 :
 def probleman3i1():
     n = int(input("Digite um valor inteiro: "))
     i = 0
@@ -153,6 +196,7 @@ Probleman3i1 = False
 if Probleman3i1:probleman3i1()
 else: pass
 
+
 def hanoi(n):
     torre1 = ""
     torre2 = ""
@@ -164,8 +208,6 @@ def hanoi(n):
         if torre1 and (not torre2 or torre1[-1] < torre2[-1]):
             torre2 += torre1[-1]
             torre1 = torre1[:-1] # Atualiza o valor após transferência de disco.
-            if torre2 == False : print("A torre 2 é falsa? simkkkk")
-            else:print("A torre 2 é falsa? Vish nem é kkkk :desumano:")
             print("IF Mova o disco %s da torre 1 para a torre 2." % torre2[-1])
         else:
             torre1 += torre2[-1]
@@ -193,4 +235,35 @@ def hanoi(n):
         print("Valor das torres: torre1: "+torre1+" torre2: "+torre2+" torre3: "+torre3)
 
 Hanoi = False
-if Hanoi == True:hanoi(4)
+if Hanoi:hanoi(4)
+
+
+# Kwargs
+print("Usando .items para kwargs, e end para value in kwargs:")
+def Genshin(**kwargs):
+    for key,value in kwargs.items():
+        print(value,end=" ") # end deixa tudo em uma linha apenas
+    print("\n")
+
+kwargs_end_Genshin = True
+if kwargs_end_Genshin:Genshin(razor="Electro",retentora="Anemo",thoma="Pyro",kirara="Dendro",ayaka="Cryo",navia="Geo",tartaglia="Hydro")
+
+
+print("Usando .items para kwargs, sem end para value in kwargs:")
+def Genshin(**kwargs):
+    for key,value in kwargs.items():
+        print(value) 
+    print("\n")
+    
+kwargs_Genshin = True
+if kwargs_Genshin:Genshin(razor="Electro",retentora="Anemo",thoma="Pyro",kirara="Dendro",ayaka="Cryo",navia="Geo",tartaglia="Hydro")
+
+
+# Método str.Format 
+#            Concede mais controle para os usuários mostrar o output
+print("StrFormat:")
+
+Ataques = {}
+
+Personagens = ["Pain","Madara","Sasuke","Orochimaru"]
+
