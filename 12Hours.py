@@ -9,11 +9,10 @@ Inventory = [Backpack]
         
 Chamber = ("Empty_Chamber","Loaded_Chamber","Empty_Chamber","Empty_Chamber","Empty_Chamber","Empty_Chamber")
 
-print("\n")
 if Backpack:
-    print("Inventory:"+"\n"*2+"Backpack:")
+    print("\nInventory:"+"\n"*2+"Backpack:")
 else: 
-    print("Inventory:"+"\n")
+    print("Inventory:\n")
 
 for x in Backpack:
     print(x)
@@ -38,14 +37,14 @@ Weapons.add("geppaku haran")
 Weapons.remove("mistsplitter")
 # Weapons.clear() 
 GI_Characters.update(Weapons)
-print("Genshin Impact:""\n")
+print("Genshin Impact:\n")
 for x in GI_Characters:
     print(x)
 
 # GI_CharsGearEquipped = GI_Characters.union(Weapons) Basicamente, cria uma variavel para armazenar os valores somados,
 # sem de fato somar os 2 em si.
 
-print("\n""Dragon Ball Z & Naruto:""\n")
+print("\nDragon Ball Z & Naruto:\n")
 Dbz = {"goku","vegeta","gohan","fans"}
 Naruto = {"naruto","sasuke","itachi","fans"}
 
@@ -97,9 +96,8 @@ if number1 and (not number2 or number3 < number4):
     print("o not aplica apenas ao proximo parametro/variavel.")
 else: print("sim o not, aplica em todos dentro de uma tupla ou à direita.")
 
-print("\n")
 # Functions :
-print("Functions:""\n")
+print("\nFunctions:""\n")
 
 # Testes tuplas e variaveis
 def calcular_desconto(total, cupom):
@@ -239,31 +237,96 @@ if Hanoi:hanoi(4)
 
 
 # Kwargs
-print("Usando .items para kwargs, e end para value in kwargs:")
 def Genshin(**kwargs):
     for key,value in kwargs.items():
         print(value,end=" ") # end deixa tudo em uma linha apenas
     print("\n")
+kwargs_end_Genshin = False
+if kwargs_end_Genshin:print("Usando .items para kwargs, e end para value in kwargs:"),Genshin(razor="Electro",retentora="Anemo",thoma="Pyro",kirara="Dendro",ayaka="Cryo",navia="Geo",tartaglia="Hydro")
 
-kwargs_end_Genshin = True
-if kwargs_end_Genshin:Genshin(razor="Electro",retentora="Anemo",thoma="Pyro",kirara="Dendro",ayaka="Cryo",navia="Geo",tartaglia="Hydro")
 
 
-print("Usando .items para kwargs, sem end para value in kwargs:")
 def Genshin(**kwargs):
     for key,value in kwargs.items():
         print(value) 
-    print("\n")
-    
-kwargs_Genshin = True
-if kwargs_Genshin:Genshin(razor="Electro",retentora="Anemo",thoma="Pyro",kirara="Dendro",ayaka="Cryo",navia="Geo",tartaglia="Hydro")
+           
+kwargs_Genshin = False
+if kwargs_Genshin:print("Usando .items para kwargs, sem end para value in kwargs:"),Genshin(razor="Electro",retentora="Anemo",thoma="Pyro",kirara="Dendro",ayaka="Cryo",navia="Geo",tartaglia="Hydro")
 
 
 # Método str.Format 
 #            Concede mais controle para os usuários mostrar o output
-print("StrFormat:")
+print("\nStrFormat:\n")
 
-Ataques = {}
+body_part = "fist"
+head_part = "face"
 
-Personagens = ["Pain","Madara","Sasuke","Orochimaru"]
+print("the {1} punched the {0}".format(body_part,head_part))
+print("the {body_part} punched the {head_part}".format(head_part="face",body_part="fist"))
 
+text = "Goku está em forma {}"
+print(text.format("base"))
+print(text.format("super sayajin\n"))
+
+number = 10000
+print("The number is {:,.2f}".format(number))
+print("The number is {:b} in binary representation.".format(number))
+print("The number is {:o} in octadecimal representation.".format(number))
+print("The number is {:x} in hexadecimal representation.".format(number))
+print("The number is {:E} in scientific notation.".format(number))
+
+import random
+
+x = random.randint(1,6)
+y = random.random()
+
+print("Numero aleatorio de 1 até 6: "+str(x))
+
+attacklist = ['kamehameha','kaioken','strike']
+z = random.choice(attacklist)
+print("Ataque aleatório da lista de ataques Z:",z+"\n")
+
+print("Embaralhamento:")
+cards = [1,2,3,4,5,6,7,8,9,"J","Q","K","A"]
+random.shuffle(cards)
+print(cards)
+
+treino_exception = False
+if treino_exception:
+    try:
+        numerator = float(input("Enter a number to divide: "))
+        denominator = float(input("Enter a number to divide by: "))
+        result = numerator / denominator
+    except ZeroDivisionError as e:
+        print("You can't divide by zero.")
+    except ValueError as e:
+        print("Enter only numbers.")
+    except Exception as e:
+        print("Something is wrong with ur ass code.")
+    else:
+        print(result)
+    finally:
+        print("This will always execute.")
+
+import os
+
+path = "D:\\"
+
+if os.path.exists(path):
+    print("\nO caminho é existente.")
+    if os.path.isfile(path):
+        print("E é um arquivo.")
+    elif os.path.isdir(path):
+        print("E é uma pasta.")
+else:
+    print("\nO Caminho não existe.")
+
+
+abrir_arquivo = False
+if abrir_arquivo:
+    try:
+        with open("C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\Python\\Ola.txt") as file:
+            print(file.read())
+    except FileNotFoundError:
+        print("Não deu pra achar, Caralho!")
+    print(file.closed)
