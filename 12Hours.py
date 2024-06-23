@@ -325,8 +325,35 @@ else:
 abrir_arquivo = False
 if abrir_arquivo:
     try:
-        with open("C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\Python\\Ola.txt") as file:
-            print(file.read())
+        with open(r"C:\Users\gabri\OneDrive\Área de Trabalho\Python\Test.txt") as file: # Abre o arquivo em questão como variavel 'file' em um caminho especifico,
+            print(file.read())                                                          # mas poderia abrir em um caminho predefinido.                                                          
+    except FileNotFoundError:                                                           
+        print("Não deu pra achar, Caralho!")
+    print(file.closed) # Printa true se o arquivo estiver fechado e false caso contrario.
+
+
+
+abrir_arquivo_2nd = False
+if abrir_arquivo_2nd == "Write":
+    try:
+        text="Esse é o conteudo SOBREPOSTO do arquivo." # Usando metodo 'w', (Write) na função open.
+        with open("C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\Python\\WriteOrAppend.txt",'w') as Write:
+            Write.write(text)
     except FileNotFoundError:
         print("Não deu pra achar, Caralho!")
-    print(file.closed)
+
+elif abrir_arquivo_2nd == "Append": 
+    try:
+        text="\nEsse é o conteudo JUNTADO do arquivo." # Usando metodo 'a', (Append) na função open.
+        with open("C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\Python\\WriteOrAppend.txt",'a') as Append:
+            Append.write(text)
+    except FileNotFoundError:
+        print("Não deu pra achar, Caralho!")
+
+elif abrir_arquivo_2nd == "Original":
+    try:
+        text="Esse é o conteudo ORIGINAL do arquivo." # Usando metodo 'w', (Write) na função open.
+        with open("C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\Python\\WriteOrAppend.txt",'w') as Original:
+            Original.write(text)
+    except FileNotFoundError:
+        print("Não deu pra achar, Caralho!")
