@@ -3,7 +3,7 @@ def main():
     try: # tente executar o que há dentro do bloco de código, se der erro.:except
         n = int(input("Clicks no interruptor: "))
 
-  # Get clicks and switch presses in a single line
+    # Get clicks and switch presses in a single line
         clicks_and_presses = input("Aperte interruptor 1 ou 2: ").split() # Split é interpretado como "spacebar".
 
         # Ensure enough input provided
@@ -35,23 +35,32 @@ def main():
        
 
 if __name__ == "__main__":
-  main()
+    main()
 
 # -/-
 
 # 2a Versão
-def main(): # ! A SE ARRUMAR.!!!!
-    n = int(input("Clicks no interruptor: "))
+def main():
+
+    n = int(input("Número de cliques no interruptor: "))
     a = 0
     b = 0
 
-    interruptor = input("Aperte interruptor 1 ou 2: ").split(" ")
-    
+    interruptor = []
+    while len(interruptor) < n:
+        interruptor += input("Digite apenas um elemento, sendo 1 ou 2: ")
+        if interruptor == n:
+            break 
+    print(interruptor)
+
     for posicoes in (interruptor):
-        print(posicoes)
-        if posicoes == 1:
+        if posicoes == str(1):
             a += 1
-        else: a += 1; b += 1
+        elif posicoes == str(2): 
+            a += 1; b += 1
+        else:
+            print("Valor invalido de interruptor. (1 ou 2)")
+            return
     
     if a % 2 > 0 : print(1)
     else: print(0)
@@ -76,9 +85,12 @@ def main():
         lista.append(elemento)
 
     for posicoes in lista:
-        if posicoes == 1:
+        if posicoes == str(1):
             a += 1
-        else: a += 1; b += 1
+        elif posicoes == str(2): 
+            a += 1; b += 1
+        else:
+            print("Erro de valores.")
     
     if a % 2 > 0 : print(1)
     else: print(0)
