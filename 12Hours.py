@@ -336,7 +336,7 @@ if abrir_arquivo:
 abrir_arquivo_2nd = False
 if abrir_arquivo_2nd == "Write":
     try:
-        text="Esse é o conteudo SOBREPOSTO do arquivo." # Usando metodo 'w', (Write) na função open.
+        text="Esse eh o conteudo SOBREPOSTO do arquivo." # Usando metodo 'w', (Write) na função open.
         with open("C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\Python\\WriteOrAppend.txt",'w') as Write:
             Write.write(text)
     except FileNotFoundError:
@@ -344,7 +344,7 @@ if abrir_arquivo_2nd == "Write":
 
 elif abrir_arquivo_2nd == "Append": 
     try:
-        text="\nEsse é o conteudo JUNTADO do arquivo." # Usando metodo 'a', (Append) na função open.
+        text="\nEsse eh o conteudo JUNTADO do arquivo." # Usando metodo 'a', (Append) na função open.
         with open("C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\Python\\WriteOrAppend.txt",'a') as Append:
             Append.write(text)
     except FileNotFoundError:
@@ -352,8 +352,28 @@ elif abrir_arquivo_2nd == "Append":
 
 elif abrir_arquivo_2nd == "Original":
     try:
-        text="Esse é o conteudo ORIGINAL do arquivo." # Usando metodo 'w', (Write) na função open.
+        text="Esse eh o conteudo ORIGINAL do arquivo." # Usando metodo 'w', (Write) na função open.
         with open("C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\Python\\WriteOrAppend.txt",'w') as Original:
             Original.write(text)
     except FileNotFoundError:
         print("Não deu pra achar, Caralho!")
+
+# copyfile() =  copies contents of a file
+# copy() =      copyfile() + permission mode + destination can be a folder
+# copy2() =     copy() + copies metadata (file's creation and modification times)
+
+import shutil
+
+#     shutil.copy('ARQUIVOINUTIL.txt',r'C:\Users\gabri\OneDrive\Área de Trabalho\PASTA PARA ESTUDOS PYTHON')
+
+source = 'Test.txt'
+destination = r'C:\Users\gabri\OneDrive\Área de Trabalho\PASTA PARA ESTUDOS PYTHON\Test.txt'
+
+try:
+    if os.path.exists(destination):
+        print("There is already a file there")
+    else:
+        os.replace(source,destination)
+        print(source+" was moved")
+except FileNotFoundError:
+    print(source+" was not found")
