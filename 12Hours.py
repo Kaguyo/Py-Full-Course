@@ -381,15 +381,12 @@ except FileNotFoundError:
 
 def deletando_arquivos_pastas():
     
-    
     File_and_Dir = True
     if File_and_Dir:
         # Output pra organizar console
         print("Primeiro bloco da funcao:")
-        
         # Declarando variavel guardando nome seguinte dado a uma pasta.
         Nome_da_Pasta = 'Folder with content'
-        
         # Verificando se ja existe tal pasta.
         if os.path.exists(Nome_da_Pasta):
             print("There already is a folder named "+Nome_da_Pasta)
@@ -465,7 +462,6 @@ def deletando_arquivos_pastas():
     
     Folder = True
     if Folder:
-
         print("\nTerceiro bloco da funcao:")
         folder_source = 'Folder'
         if os.path.exists(folder_source):
@@ -488,5 +484,5 @@ def deletando_arquivos_pastas():
     else:
         print("The function seems unfunctional, try turning booleans at the top to true.")
 
-deletar_e_criar = True
+deletar_e_criar = False
 if deletar_e_criar:deletando_arquivos_pastas()
