@@ -315,9 +315,9 @@ path = "D:\\"
 if os.path.exists(path):
     print("\nO caminho é existente.")
     if os.path.isfile(path):
-        print("E é um arquivo.")
+        print("E é um arquivo.\n")
     elif os.path.isdir(path):
-        print("E é uma pasta.")
+        print("E é uma pasta.\n")
 else:
     print("\nO Caminho não existe.")
 
@@ -371,9 +371,122 @@ destination = r'C:\Users\gabri\OneDrive\Área de Trabalho\PASTA PARA ESTUDOS PYT
 
 try:
     if os.path.exists(destination):
-        print("There is already a file there")
+        print("There already is a file there\n")
     else:
         os.replace(source,destination)
-        print(source+" was moved")
+        print(source+" was moved\n")
 except FileNotFoundError:
-    print(source+" was not found")
+    print(source+" was not found\n")
+
+
+def deletando_arquivos_pastas():
+    
+    
+    File_and_Dir = True
+    if File_and_Dir:
+        # Output pra organizar console
+        print("Primeiro bloco da funcao:")
+        
+        # Declarando variavel guardando nome seguinte dado a uma pasta.
+        Nome_da_Pasta = 'Folder with content'
+        
+        # Verificando se ja existe tal pasta.
+        if os.path.exists(Nome_da_Pasta):
+            print("There already is a folder named "+Nome_da_Pasta)
+        else:
+        # Criando a pasta com o nome anteriormente declarado.
+            os.mkdir(Nome_da_Pasta)
+        # Verificando se o arquivo ja esta dentro da pasta criada.
+        if os.path.exists(r'C:\Users\gabri\OneDrive\Área de Trabalho\Python\Folder with content\file.txt'):
+            print("The file already is in the folder")
+        else:
+            # Declarando variavel guardando nome seguinte dado a um arquivo.
+            file_and_dir = 'arquivo.txt'
+            
+            # Verificando se ja existe o arquivo em questão.
+            if os.path.exists(file_and_dir):
+                print("The file "+file_and_dir+" already exists.")
+            # Criando o arquivo se ainda não existir.
+            else:
+                with open(file_and_dir,'w') as FandDir:
+                    FandDir.write('Este arquivo foi gerado automaticamente')
+                    print('O arquivo '+file_and_dir+' foi criado.')
+            # Movendo o arquivo para dentro da pasta.
+                os.replace(file_and_dir,r'C:\Users\gabri\OneDrive\Área de Trabalho\Python\Folder with content\file.txt')
+            # Verificando se o arquivo foi de fato movido para dentro da pasta.
+                if os.path.exists(r'C:\Users\gabri\OneDrive\Área de Trabalho\Python\Folder with content\file.txt'):
+                    print("The file was moved succesfully")
+            # Por fim mensagem de sucesso do algoritmo :)
+                if os.path.exists(r'C:\Users\gabri\OneDrive\Área de Trabalho\Python\Folder with content\file.txt'):
+                    print("A porra da pasta existe, e o arquivo esta dentro dela.")
+            # Mensagem de fracasso total >:(
+                else:
+                    print("Lixo nao sabe nem fazer algoritmo.\n")
+            
+        # !!!!!! Trecho pra apagar a porra toda !!!!!! 
+        Quero_Excluir_Esta_Pasta = False
+        if Quero_Excluir_Esta_Pasta:
+        # Criando handling para erro de permissão.
+            try:
+                shutil.rmtree(Nome_da_Pasta)
+                print("Apagou a porra toda.\n")
+            except PermissionError as e:
+            # Exibindo erro encontrado, e também mensagem de erro personalizada.
+                print(e)
+                print('Fraco, impotente, nao tem permissao para deleter o proprio arquivo.\n')
+
+    File = True
+    if File:
+        print("\nSegundo bloco da funcao:")
+        file_content = ''
+        file_source = 'file.txt'
+        if os.path.exists(file_source):
+            print("Item "+file_source+" found")
+        else:
+            with open(file_source,'w') as file:
+                file.write(file_content)
+            if os.path.exists(file_source):
+                print("File "+file_source+" was created")
+            else:
+                print("File couldn't be created")
+        try:
+            if os.path.exists(file_source):
+                os.remove(file_source)
+                if os.path.exists(file_source):
+                    print(file_source+" was not deleted")
+                else:
+                    print(file_source+" was deleted")
+            else:
+                print(file_source+" was not found")
+        except PermissionError:
+            print("You do not have permission to delete that")
+    else:
+        print("The function seems unfunctional, try turning booleans at the top to true.")
+    
+    Folder = True
+    if Folder:
+
+        print("\nTerceiro bloco da funcao:")
+        folder_source = 'Folder'
+        if os.path.exists(folder_source):
+            print("Item "+folder_source+" found")
+        else:
+            os.mkdir(folder_source)
+            print("Directory "+folder_source+" was created")
+
+        try:
+            if os.path.exists(folder_source):
+                os.rmdir(folder_source)
+                if os.path.exists(folder_source):
+                    (folder_source+" was not deleted")
+                else:
+                    print(folder_source+" was deleted")
+            else:
+                print(folder_source+" was not found")
+        except PermissionError:
+            print("You do not have permission to delete that")
+    else:
+        print("The function seems unfunctional, try turning booleans at the top to true.")
+
+deletar_e_criar = True
+if deletar_e_criar:deletando_arquivos_pastas()
