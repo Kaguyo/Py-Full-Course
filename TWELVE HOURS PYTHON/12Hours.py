@@ -394,7 +394,7 @@ def deletando_arquivos_pastas():
         # Criando a pasta com o nome anteriormente declarado.
             os.mkdir(Nome_da_Pasta)
         # Verificando se o arquivo ja esta dentro da pasta criada.
-        if os.path.exists(r'C:\Users\gabri\OneDrive\Área de Trabalho\Python\Folder with content\file.txt'):
+        if os.path.exists(r'C:\Users\gabri\OneDrive\Área de Trabalho\Python\TWELVE HOURS PYTHON\Folder with content\file.txt'):
             print("The file already is in the folder")
         else:
             # Declarando variavel guardando nome seguinte dado a um arquivo.
@@ -409,17 +409,17 @@ def deletando_arquivos_pastas():
                     FandDir.write('Este arquivo foi gerado automaticamente')
                     print('O arquivo '+file_and_dir+' foi criado.')
             # Movendo o arquivo para dentro da pasta.
-                os.replace(file_and_dir,r'C:\Users\gabri\OneDrive\Área de Trabalho\Python\Folder with content\file.txt')
+                os.replace(file_and_dir,r'C:\Users\gabri\OneDrive\Área de Trabalho\Python\TWELVE HOURS PYTHON\Folder with content\file.txt')
             # Verificando se o arquivo foi de fato movido para dentro da pasta.
-                if os.path.exists(r'C:\Users\gabri\OneDrive\Área de Trabalho\Python\Folder with content\file.txt'):
+                if os.path.exists(r'C:\Users\gabri\OneDrive\Área de Trabalho\Python\TWELVE HOURS PYTHON\Folder with content\file.txt'):
                     print("The file was moved succesfully")
             # Por fim mensagem de sucesso do algoritmo :)
-                if os.path.exists(r'C:\Users\gabri\OneDrive\Área de Trabalho\Python\Folder with content\file.txt'):
+                if os.path.exists(r'C:\Users\gabri\OneDrive\Área de Trabalho\Python\TWELVE HOURS PYTHON\Folder with content\file.txt'):
                     print("A porra da pasta existe, e o arquivo esta dentro dela.")
             # Mensagem de fracasso total >:(
                 else:
                     print("Lixo nao sabe nem fazer algoritmo.\n")
-            
+
         # !!!!!! Trecho pra apagar a porra toda !!!!!! 
         Quero_Excluir_Esta_Pasta = False
         if Quero_Excluir_Esta_Pasta:
@@ -459,7 +459,7 @@ def deletando_arquivos_pastas():
             print("You do not have permission to delete that")
     else:
         print("The function seems unfunctional, try turning booleans at the top to true.")
-    
+
     Folder = True
     if Folder:
         print("\nTerceiro bloco da funcao:")
@@ -486,3 +486,18 @@ def deletando_arquivos_pastas():
 
 deletar_e_criar = False
 if deletar_e_criar:deletando_arquivos_pastas()
+
+print("\nModulos, agora deu o caraio memo: ")
+#   module = a file containing python code. May contain functions, classes, etc.
+#   used with modular programming, which is to separate a program into parts
+
+#   Metodo 1: importa um modulo podendo usar 'alias' para entao usar dot e escolher qual funçao/variavel usar.
+import Modules as mdl
+mdl.hello
+#   Metodo 2: importa uma extensao de funcoes diretamente do modulo, 
+#   assim podendo apenas chamar as funcoes sem precisar do nome do modulo.
+
+from Modules import funcao_multipla as f1, funcao_multipla2, funcao_mutlipla3 as f3
+f1()
+funcao_multipla2()
+f3()
