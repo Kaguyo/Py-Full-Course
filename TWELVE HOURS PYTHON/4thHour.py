@@ -492,12 +492,19 @@ print("\nModulos, agora deu o caraio memo: ")
 #   used with modular programming, which is to separate a program into parts
 
 #   Metodo 1: importa um modulo podendo usar 'alias' para entao usar dot e escolher qual funçao/variavel usar.
-import Modules as mdl
+import FirstModules as mdl
 mdl.hello
+
 #   Metodo 2: importa uma extensao de funcoes diretamente do modulo, 
 #   assim podendo apenas chamar as funcoes sem precisar do nome do modulo.
-
-from Modules import funcao_multipla as f1, funcao_multipla2, funcao_mutlipla3 as f3
+from FirstModules import funcao_multipla as f1, funcao_multipla2, funcao_mutlipla3 as f3
 f1()
 funcao_multipla2()
 f3()
+
+# !!!! Metodo 3 !!!!: importa todo conteudo do modulo, porem ha risco de conflito de nomeclaturas.
+from SecondModules import *
+
+Mostre_a_Lista_de_Modulos = False
+if Mostre_a_Lista_de_Modulos:
+    help('modules')
