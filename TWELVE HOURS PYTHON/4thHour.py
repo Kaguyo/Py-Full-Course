@@ -503,8 +503,36 @@ funcao_multipla2()
 f3()
 
 # !!!! Metodo 3 !!!!: importa todo conteudo do modulo, porem ha risco de conflito de nomeclaturas.
-from SecondModules import *
+# from SecondModules_OOP import *
 
 Mostre_a_Lista_de_Modulos = False
 if Mostre_a_Lista_de_Modulos:
     help('modules')
+
+# OOP:
+print('\nOOP:') # Organizando output
+from SecondModules_OOP import Ataque
+OOP1 = True
+if OOP1:
+    Ataque_1 = Ataque('Arranhar','Normal','Physical',40,100,100,'Single-Foe')
+    Ataque_2 = Ataque('Brasas','Fogo','Special',25,100,100,'Single-Foe')
+    print('-------------')
+    print(Ataque_1.Nome)
+    print(Ataque_1.Tipo)
+    print(Ataque_1.Categoria)
+    print(Ataque_1.PP)
+    print(Ataque_1.Power)
+    print(Ataque_1.Accuracy)
+    print(Ataque_1.Target)
+    print('-------------')
+    print('-------------')
+    print(Ataque_2.Nome)
+    print(Ataque_2.Tipo)
+    print(Ataque_2.Categoria)
+    print(Ataque_2.PP)
+    print(Ataque_2.Power)
+    print(Ataque_2.Accuracy)
+    print(Ataque_2.Target)
+    print('-------------')
+    Ataque_1.move()
+    print(f'Quantos slots de movimentos cada personagem tem?: '+{Ataque.Slots})
