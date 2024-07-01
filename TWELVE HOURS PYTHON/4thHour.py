@@ -487,7 +487,7 @@ def deletando_arquivos_pastas():
 deletar_e_criar = False
 if deletar_e_criar:deletando_arquivos_pastas()
 
-print("\nModulos, agora deud o caraio memo: ")
+print("\nModulos, agora deu o caraio memo: ")
 #   module = a file containing python code. May contain functions, classes, etc.
 #   used with modular programming, which is to separate a program into parts
 
