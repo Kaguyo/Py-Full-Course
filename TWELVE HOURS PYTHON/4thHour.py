@@ -509,6 +509,77 @@ Mostre_a_Lista_de_Modulos = False
 if Mostre_a_Lista_de_Modulos:
     help('modules')
 
+
+
+# Breakthrough quiz game:
+def new_game():
+    print('Quiz game:')
+    guesses = []
+    correct_guesses = 0
+    question_num = 1
+    for key in questions:
+        print('---------------------------')
+        print(key)
+        for _ in options[question_num-1]:
+            print(_)
+        guess = input('Enter (A, B, C or D): ').upper()
+        guesses.append(guess)
+
+        correct_guesses += check_answer(questions.get(key),guess)
+        question_num += 1
+    display_score(correct_guesses, guesses)
+#   ---------------------------------    
+def check_answer(answer,guess):
+     
+    if answer == guess:
+        print('Correct!')
+        return 1
+    else: 
+        print('Wrong!')
+        return 0
+#   ---------------------------------    
+def display_score(correct_guesses,guesses):
+    print('---------------------------')
+    print('RESULTS')
+    print('---------------------------')
+    print('Answers: ', end='')
+    for i in questions:
+        print(questions.get(i), end=' ')
+    print()
+
+    print('Guesses: ', end='')
+    for i in guesses:
+        print(i, end=' ')
+    print()
+
+    score = int((correct_guesses/len(questions))*100)
+    print('Your score is: 'f'{score}%')
+#   ---------------------------------
+def play_again():
+    response = input('Play again? (y/n): ').upper
+    if response == 'YES':
+        return True
+    else:
+        return False
+#   ---------------------------------
+options = [['A. x50','B. x10','C. x100','D. x25'],
+           ['A. x3 Stronger','B. x2 Stronger','C. x10 Stronger','D. x4 Stronger'],
+           ['A. Taijustu','B. Senjutsu','C. Ninjutsu','D. Genjutsu'],
+           ['A. 90 km/h','B. 100 km/h','C. 120 km/h','D. 190 km/h']]
+questions = {
+    'How many times SSJ multiply your Combat Power?:': "A",
+    'How much stronger SSJ2 is compared to SSJ?:': "B",
+    'What kind of jutsu is Kotoamatsukami?:': "C",
+    'What is a Cheetah top speed?:': "C"
+}
+Playquizgame = True
+if Playquizgame:
+    new_game()
+
+while play_again():
+    new_game()
+
+    
 # OOP:
 print('\nOOP:') # Organizando output
 from SecondModules_OOP import Ataque
@@ -535,4 +606,4 @@ if OOP1:
     print(Ataque_2.Target)
     print('-------------')
     Ataque_1.move()
-    print(f'Quantos slots de movimentos cada personagem tem?: '+{Ataque.Slots})
+    print('Quantos slots de movimentos cada personagem tem?: '+f'{Ataque.Slots}')
