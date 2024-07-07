@@ -572,7 +572,7 @@ questions = {
     'What kind of jutsu is Kotoamatsukami?:': "C",
     'What is a Cheetah top speed?:': "C"
 }
-Playquizgame = True
+Playquizgame = False
 if Playquizgame:
     new_game()
 
