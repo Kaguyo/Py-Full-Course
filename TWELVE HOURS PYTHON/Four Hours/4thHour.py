@@ -325,7 +325,7 @@ else:
 abrir_arquivo = False
 if abrir_arquivo:
     try:
-        with open(r"C:\Users\gabri\OneDrive\Área de Trabalho\Python\Test.txt") as file: # Abre o arquivo em questão como variavel 'file' em um caminho especifico,
+        with open(r"C:\Users\gabri\OneDrive\Área de Trabalho\Python\Four Hours\Test.txt") as file: # Abre o arquivo em questão como variavel 'file' em um caminho especifico,
             print(file.read())                                                          # mas poderia abrir em um caminho predefinido.                                                          
     except FileNotFoundError:                                                           
         print("Não deu pra achar, Caralho!")
@@ -337,7 +337,7 @@ abrir_arquivo_2nd = False
 if abrir_arquivo_2nd == "Write":
     try:
         text="Esse eh o conteudo SOBREPOSTO do arquivo." # Usando metodo 'w', (Write) na função open.
-        with open("C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\Python\\WriteOrAppend.txt",'w') as Write:
+        with open("C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\Python\\Four Hours\\WriteOrAppend.txt",'w') as Write:
             Write.write(text)
     except FileNotFoundError:
         print("Não deu pra achar, Caralho!")
@@ -345,7 +345,7 @@ if abrir_arquivo_2nd == "Write":
 elif abrir_arquivo_2nd == "Append": 
     try:
         text="\nEsse eh o conteudo JUNTADO do arquivo." # Usando metodo 'a', (Append) na função open.
-        with open("C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\Python\\WriteOrAppend.txt",'a') as Append:
+        with open("C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\Python\\Four Hours\\WriteOrAppend.txt",'a') as Append:
             Append.write(text)
     except FileNotFoundError:
         print("Não deu pra achar, Caralho!")
@@ -353,7 +353,7 @@ elif abrir_arquivo_2nd == "Append":
 elif abrir_arquivo_2nd == "Original":
     try:
         text="Esse eh o conteudo ORIGINAL do arquivo." # Usando metodo 'w', (Write) na função open.
-        with open("C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\Python\\WriteOrAppend.txt",'w') as Original:
+        with open("C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\Python\\Four Hours\\WriteOrAppend.txt",'w') as Original:
             Original.write(text)
     except FileNotFoundError:
         print("Não deu pra achar, Caralho!")
@@ -394,7 +394,7 @@ def deletando_arquivos_pastas():
         # Criando a pasta com o nome anteriormente declarado.
             os.mkdir(Nome_da_Pasta)
         # Verificando se o arquivo ja esta dentro da pasta criada.
-        if os.path.exists(r'C:\Users\gabri\OneDrive\Área de Trabalho\Python\TWELVE HOURS PYTHON\Folder with content\file.txt'):
+        if os.path.exists(r'C:\Users\gabri\OneDrive\Área de Trabalho\Python\TWELVE HOURS PYTHON\Four Hours\Folder with content\file.txt'):
             print("The file already is in the folder")
         else:
             # Declarando variavel guardando nome seguinte dado a um arquivo.
@@ -409,12 +409,12 @@ def deletando_arquivos_pastas():
                     FandDir.write('Este arquivo foi gerado automaticamente')
                     print('O arquivo '+file_and_dir+' foi criado.')
             # Movendo o arquivo para dentro da pasta.
-                os.replace(file_and_dir,r'C:\Users\gabri\OneDrive\Área de Trabalho\Python\TWELVE HOURS PYTHON\Folder with content\file.txt')
+                os.replace(file_and_dir,r'C:\Users\gabri\OneDrive\Área de Trabalho\Python\TWELVE HOURS PYTHON\Four Hours\Folder with content\file.txt')
             # Verificando se o arquivo foi de fato movido para dentro da pasta.
-                if os.path.exists(r'C:\Users\gabri\OneDrive\Área de Trabalho\Python\TWELVE HOURS PYTHON\Folder with content\file.txt'):
+                if os.path.exists(r'C:\Users\gabri\OneDrive\Área de Trabalho\Python\TWELVE HOURS PYTHON\Four Hours\Folder with content\file.txt'):
                     print("The file was moved succesfully")
             # Por fim mensagem de sucesso do algoritmo :)
-                if os.path.exists(r'C:\Users\gabri\OneDrive\Área de Trabalho\Python\TWELVE HOURS PYTHON\Folder with content\file.txt'):
+                if os.path.exists(r'C:\Users\gabri\OneDrive\Área de Trabalho\Python\TWELVE HOURS PYTHON\Four Hours\Folder with content\file.txt'):
                     print("A porra da pasta existe, e o arquivo esta dentro dela.")
             # Mensagem de fracasso total >:(
                 else:
