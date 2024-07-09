@@ -15,47 +15,48 @@ class Ataque:
     def move(self):
         print(self.Nome+' was executed')
 #   -----------------------------------
-class Character:
+class Character:                    # Define Character
     Alive = True
 
-    def Health():
-        print('This character has Health')
-    
-    def Attack():
-        print('This character has Attack')
+    health = 'This character has Health ({})'                 
+    attack = 'This character has Attack ({})'
+    defense = 'This character has Defense ({})'
 
-    def Defense():
-        print('This character has Defense')
-
-class March7th(Character):
+class March7th(Character):          # Herda Character
     def Element():
         print('This character has Ice element')
-
-class DanHeng(Character):
+        print(Character.health.format(40))
+        print(Character.defense.format(100))
+        print(Character.attack.format(20))
+        
+class DanHeng(Character):           # Herda Character
     def Element():
         print('This character has Imaginary element')
-
-class Seele(Character):
+        print(Character.health.format(40))
+        print(Character.defense.format(50))
+        print(Character.attack.format(70))
+class Seele(Character):             # Herda Character
     def Element():
         print('This character has Quantum element and shes goddamn beautiful')
+        print(Character.health.format(40))
+        print(Character.defense.format(50))
+        print(Character.attack.format(110))
 
-class Weapon:
 
-    def Scythe(self=Seele):         # Herda a classe Seele, qual está também herdando toda classe Character,
-                                    # que por sua vez está sendo apenas definida, no topo das classes
+class Weapon(Seele,DanHeng,March7th): # Herda as 3 Classes anteriores
+                                    
+    def Scythe():
         print('This character uses a Scythe and she is baddass.')
     
-    def Spear(self=DanHeng):        # Herda a classe DanHeng, qual está também herdando toda classe Character,
-                                    # que por sua vez está sendo apenas definida, no topo das classes
+    def Spear():        
         print('This character uses a Spear')
     
-    def Bow(self=March7th):         # Herda a classe March7th, qual está também herdando toda classe Character,
-                                    # que por sua vez está sendo apenas definida, no topo das classes
+    def Bow():         
         print('This character uses a Bow')
 
-print('March 7th:')
-march7th = (Character.Health(), Character.Attack(), Character.Defense(), Weapon.Bow())
+print('\nMarch 7th:')
+march7th = (Weapon.Element(), Weapon.Bow())
 print('\nDan Heng:')
-danheng = (Character.Health(), Character.Attack(), Character.Defense(), Weapon.Spear())
+danheng = (Weapon.Element(), Weapon.Spear())
 print('\nSeele Vollerei:')
-seele = (Character.Health(), Character.Attack(), Character.Defense(), Weapon.Scythe())
+seele = (Weapon.Element(), Weapon.Scythe())
