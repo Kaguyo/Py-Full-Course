@@ -576,8 +576,8 @@ Playquizgame = False
 if Playquizgame:
     new_game()
 
-while play_again():
-    new_game()
+    while play_again():
+        new_game()
 
     
 # OOP:

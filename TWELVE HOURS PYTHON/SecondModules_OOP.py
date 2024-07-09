@@ -14,3 +14,31 @@ class Ataque:
 
     def move(self):
         print(self.Nome+' was executed')
+
+class Character:
+    Alive = True
+
+    def Health():
+        print('This character has Health')
+    
+    def Attack():
+        print('This character has Attack')
+
+    def Defense():
+        print('This character has Defense')
+
+class March7th(Character):
+    def Element():
+        print('This character has Ice element')
+
+class DanHeng(Character):
+    def Element():
+        print('This character has Imaginary element')
+
+class Seele(Character):
+    def Element():
+        print('This character has Quantum element and shes goddamn beautiful')
+
+march7th = March7th.Element()
+danheng = DanHeng.Element()
+seele = Seele.Element()
