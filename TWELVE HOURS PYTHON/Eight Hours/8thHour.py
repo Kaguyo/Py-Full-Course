@@ -55,9 +55,6 @@ class Daisy(Keqing):
 
     def __init__(self, age, weight):
         super().__init__(age, weight)
-    
-    def fase(self):
-        return self.age*self.weight
 
 class Peach(Keqing):
     
@@ -67,5 +64,3 @@ class Peach(Keqing):
 
 keqing = Keqing(19,60)
 peach = Peach(19, 60, 173)
-
-print(Daisy.fase())
